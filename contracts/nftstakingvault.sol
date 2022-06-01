@@ -2,14 +2,14 @@
 
 pragma solidity 0.8.4;
 
-import "https://github.com/net2devcrypto/n2dstaking/N2DRewards.sol";
-import "https://github.com/net2devcrypto/n2dstaking/Collection.sol";
+import "https://github.com/f-nft/f-nft-ERC721/FNFTRewards.sol";
+import "https://github.com/f-nft/f-nft-ERC721/Collection.sol";
 
 contract NFTStaking is Ownable, IERC721Receiver {
 
   struct vaultInfo {
         Collection nft;
-        N2DRewards token;
+        fnftRewards token;
         string name;
   }
 
@@ -30,7 +30,7 @@ contract NFTStaking is Ownable, IERC721Receiver {
 
 function addVault(
         Collection _nft,
-        N2DRewards _token,
+        fnftRewards _token,
         string calldata _name
     ) public {
         VaultInfo.push(

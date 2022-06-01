@@ -2,8 +2,8 @@
 
 pragma solidity 0.8.4;
 
-import "https://github.com/net2devcrypto/n2dstaking/N2DRewards.sol";
-import "https://github.com/net2devcrypto/n2dstaking/Collection.sol";
+import "https://github.com/f-nft/f-nft-ERC721/FNFTRewards.sol";
+import "https://github.com/f-nft/f-nft-ERC721/Collection.sol";
 
 contract NFTStaking is Ownable, IERC721Receiver {
 
@@ -22,12 +22,12 @@ contract NFTStaking is Ownable, IERC721Receiver {
 
   // reference to the Block NFT contract
   Collection nft;
-  N2DRewards token;
+  fnftRewards token;
 
   // maps tokenId to stake
   mapping(uint256 => Stake) public vault; 
 
-   constructor(Collection _nft, N2DRewards _token) { 
+   constructor(Collection _nft, fnftRewards _token) { 
     nft = _nft;
     token = _token;
   }
